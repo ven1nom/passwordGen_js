@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Password Generator</title>
+
+        <!-- Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter&family=Karla:wght@800&display=swap" rel="stylesheet">
+
+        <!-- Styles -->
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <main>
+            <div class="theme-switch">       
+                <label class="switch">      
+                    <input type="checkbox" id="color-switch" onclick="colorSwitch()">
+                    <span class="slider round">
+                        <i class="fa-regular fa-sun"></i>
+                        <i class="fa-regular fa-moon"></i>
+                    </span>
+                </label>        
+            </div>
+            <h1><span class="header-part-one">Generate a</span> <span class="header-part-two">random password</span></h1>
+            <p class="supporting-text">Never use an insecure password again.</p>
+            <button id="generator-button" onclick="generatePassword()">Generate password</button>
+
+            <hr>
+
+            <div class="output-section">
+                <div>
+                    <div class="output-copy-btn">
+                        <div class="first-output">
+                            <p class="output-field"><span id="password-one"></span></p>
+                            <button class="copy-btn" onclick="clickToCopy('password-one')"><i class="fa-solid fa-copy fa-xl" style="color: #10b981;"></i></button>
+                        </div>
+                    </div>
+                    <fieldset>
+                        <legend>Additional settings</legend>
+                        <div class="space length-field">
+                            <label for="length-password-one">Password length</label> 
+                            <input type="number" id="length-password-one" min="1" max="20" placeholder="15" onblur="lengthValueValidation()">
+                        </div>
+                        <div class="space">
+                            <label for="pass-one-symbols" class="checkbox-container">Add symbols
+                            <input type="checkbox" id="pass-one-symbols" checked>
+                            <span class="checkmark"></span>
+                            </label>
+                        </div>
+                        <div class="space">
+                            <label for="pass-one-numbers" class="checkbox-container">Add numbers
+                            <input type="checkbox" id="pass-one-numbers" checked>
+                            <span class="checkmark"></span>
+                            </label>
+                        </div>
+                    </fieldset>
+                </div>
+
+                <div>
+                    <div class="output-copy-btn">
+                        <div>
+                            <p class="output-field"><span id="password-two"></span></p>
+                            <button class="copy-btn" onclick="clickToCopy('password-two')"><i class="fa-solid fa-copy fa-xl" style="color: #10b981;"></i></button>
+                        </div>
+                    </div>
+                    <fieldset>
+                        <legend>Additional settings</legend>
+                        <div class="space length-field">
+                            <label for="length-password-two">Password length</label> 
+                            <input type="number" id="length-password-two" min="1" max="20" placeholder="15" onblur="lengthValueValidation()">    
+                        </div>
+                        <div class="space">
+                            <label for="pass-two-symbols" class="checkbox-container">Add symbols
+                            <input type="checkbox" id="pass-two-symbols" checked>
+                            <span class="checkmark"></span>
+                            </label>
+                        </div>
+                        <div class="space">
+                            <label for="pass-two-numbers" class="checkbox-container">Add numbers
+                            <input type="checkbox" id="pass-two-numbers" checked>
+                            <span class="checkmark"></span>
+                            </label>
+                        </div>
+                    </fieldset>
+                </div>
+            </div>
+        </main>
+        <script src="index.js"></script>
+        <script src="https://kit.fontawesome.com/ec8bf1aa11.js" crossorigin="anonymous"></script>
+    </body>
+</html>
